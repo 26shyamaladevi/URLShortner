@@ -7,24 +7,14 @@ import java.time.LocalDateTime;
 
 public class Entry {
 
-    @Id
-    // @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-
+    @Column(name = "originalUrl", columnDefinition = "LONGTEXT")
     private String originalUrl;
 
+    @Id
+    @Column(unique = true, nullable = false)
     private String shortUrl;
 
     private LocalDateTime createAt;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-
-    }
 
     public String getoriginalUrl(int id) {
         return originalUrl;
